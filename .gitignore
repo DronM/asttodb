@@ -1,0 +1,7 @@
+*.o
+*.er
+*.log
+asttodb_start
+asttodbd_master
+asttodbd_slave1
+

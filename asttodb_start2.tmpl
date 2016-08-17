@@ -1,0 +1,17 @@
+#!/bin/sh
+case "$1" in
+	start)
+		echo "starting asterisk to db server ..."
+		asttodb -U _DB_USER_ -D _DB_NAME_ -W _DB_PWD_ -h _AST_IP_ -p _AST_PORT_ -u _AST_USER_ -w _AST_PWD_ >asttodb.log 2>asttodb.er &
+		;;
+	stop)
+		echo "stopping asterisk to db server ..."
+		pkill -9 asttodb
+		;;
+	*)
+		echo "usage: start|stop"
+		exit 1
+		;;
+esac
+exit 0
+
